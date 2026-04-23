@@ -1,0 +1,50 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&family=JetBrains+Mono&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --primary: 171 77% 26%; /* #0f766e */
+    --primary-light: 171 77% 40%;
+    --secondary: 215 25% 15%;
+    --accent: 38 92% 50%;
+    --success: 142 71% 45%;
+    --danger: 0 84% 60%;
+    --surface: 210 40% 98%;
+    --dark: 222 47% 11%;
+  }
+
+  body {
+    @apply bg-sikas-surface text-sikas-dark font-sans antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading tracking-tight;
+  }
+}
+
+@layer components {
+  .sikas-card {
+    @apply bg-white/80 backdrop-blur-xl border border-white/20 rounded-2xl shadow-premium transition-all duration-300;
+  }
+
+  .sikas-button-primary {
+    @apply bg-sikas-primary text-white px-6 py-3 rounded-xl font-semibold hover:bg-sikas-primary-light active:scale-[0.98] transition-all shadow-glow hover:shadow-lg;
+  }
+
+  .pos-grid-item {
+    @apply bg-white p-4 rounded-2xl border border-slate-100 hover:border-sikas-primary/30 hover:shadow-md transition-all cursor-pointer;
+  }
+}
+
+@layer utilities {
+  .glass {
+    @apply bg-white/10 backdrop-blur-md border border-white/20;
+  }
+
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-sikas-primary to-sikas-primary-light;
+  }
+}
